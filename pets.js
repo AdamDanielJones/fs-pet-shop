@@ -29,33 +29,41 @@ if (process.argv.length < 3) {
     process.exit(1)
 }
 
-// console.log(process.argv);
-// let pet = parseInt(process.argv[3])
-// console.log(pet)
+
 if(command == 'read'){
     // do some read work
     fs.readFile('./pets.json', 'utf-8', function(error, data){
         if(error){
             console.error(error);
         }
-        // if(process.arv[3] !== undefined){
-        //     data = JSON.parse(data)
-        //     console.log(data[pet])
-        // }
+
         else {
-            newData = []
-            console.log(data)
+            
             let parsedData = JSON.parse(data)
-            for (i in parsedData){
-                newData.push(i)
-            }
             console.log(parsedData);
         }
     })
 }
-// if(command == 'create'){
-//     createNew(process.argv[3], process.argv[4], process.argv[5])
-// }
+if(command == 'create'){
+    createNew(process.argv[3], process.argv[4], process.argv[5])
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
